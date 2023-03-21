@@ -16,4 +16,45 @@ public class Laptop {
         this.os = os;
         this.color = color;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder laptop = new StringBuilder();
+        laptop.append("Ноутбук ");
+        laptop.append(model);
+        laptop.append(" ");
+        laptop.append(modelName);
+        laptop.append("\n");
+        laptop.append(memory);
+        laptop.append("/");
+        laptop.append(ram);
+        laptop.append(" (OS: ");
+        laptop.append(os);
+        laptop.append(")");
+        return laptop.toString();
+    }
 }

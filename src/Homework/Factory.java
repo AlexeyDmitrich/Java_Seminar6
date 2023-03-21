@@ -12,7 +12,6 @@ public class Factory {
 
     public Laptop[] fillStock (){
         String[] model = {"Acuc", "Levono", "Intesit", "Sansumg", "Presstiger", "Aker", "Motonola"};
-        String modelName = modelNameGen();
         int[] ram= {2, 4, 8, 16, 32, 64, 128, 256};
         int[] memory= {64, 128, 256, 512, 1024, 2048, 4096};
         String[] os= {"Linux", "MS Dos", "Windows 10", "Android", "FreeBSD"};
@@ -21,7 +20,7 @@ public class Factory {
         for (int i = 0; i < stock.length; i++) {
             stock[i] = new Laptop(
                     model[rnd.nextInt(model.length)],
-                    modelName,
+                    modelNameGen(),
                     ram[rnd.nextInt(ram.length)],
                     memory[rnd.nextInt(memory.length)],
                     os[rnd.nextInt(os.length)],
