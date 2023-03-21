@@ -1,11 +1,14 @@
 package Homework;
 
+import jdk.nashorn.internal.runtime.GlobalConstants;
+
 import java.util.*;
 
 public class Marketplace {
+    static Factory factory = new Factory();
     public static void main(String[] args) {
-        Factory order = new Factory(10);
-        Laptop[] set = order.fillStock();
+
+        Laptop[] set = factory.fillStock(10);
 //        printArr(set);
         ArrayList<Laptop> stock = arrToList(set);
 
@@ -19,7 +22,7 @@ public class Marketplace {
             switch (choice){
                 case 1:
                     ArrayList<Laptop> res = menu(stock);
-                    System.out.println("Вероятно, это то, что Вы искали:\n");
+                    System.out.println("Вероятно, это то, что Вам нужно:\n");
                     printList(res);
                 case 0:
                     break;
@@ -223,9 +226,9 @@ public class Marketplace {
     }
 
     public static ArrayList<Laptop> makeIdeal (int order){
+
         System.out.printf("Выбираем из %d моделей\n", order);
-        Factory factory = new Factory(order);
-        Laptop[] stock = factory.fillStock();
+        Laptop[] stock = factory.fillStock(order);
         ArrayList<Laptop> set = arrToList(stock);
 
         System.out.println("Сейчас подберём идеальный вариант для Вас");

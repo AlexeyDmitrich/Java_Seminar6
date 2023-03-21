@@ -4,19 +4,14 @@ import java.util.Random;
 
 public class Factory {
     Random rnd = new Random();
-    private int order;
 
-    public Factory(int order) {
-        this.order = order;
-    }
-
-    public Laptop[] fillStock (){
+    public Laptop[] fillStock (int order){
         String[] model = {"Acuc", "Levono", "Intesit", "Sansumg", "Presstiger", "Aker", "Motonola"};
         int[] ram= {2, 4, 8, 16, 32, 64, 128, 256};
         int[] memory= {64, 128, 256, 512, 1024, 2048, 4096};
         String[] os= {"Linux", "MS Dos", "Windows 10", "Android", "FreeBSD"};
         String[] color= {"Черный", "Серый", "Белый"};
-        Laptop[] stock = new Laptop[this.order];
+        Laptop[] stock = new Laptop[order];
         for (int i = 0; i < stock.length; i++) {
             stock[i] = new Laptop(
                     model[rnd.nextInt(model.length)],
@@ -29,7 +24,7 @@ public class Factory {
         return stock;
     }
 
-    public String modelNameGen (){
+    private String modelNameGen (){
         StringBuilder uin = new StringBuilder();
         String[] prefix = {"a","b","c","d","e","f","g","i","k","j","l","m","n","o","p","q","r","s","t","u"};
         Integer body = (rnd.nextInt(3000 - 80) + 80);

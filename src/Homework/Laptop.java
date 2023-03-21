@@ -54,7 +54,8 @@ public class Laptop {
         laptop.append(ram);
         laptop.append(" (OS: ");
         laptop.append(os);
-        laptop.append(")");
+        laptop.append("), ");
+        laptop.append(color);
         return laptop.toString();
     }
 }
