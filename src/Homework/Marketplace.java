@@ -8,8 +8,23 @@ public class Marketplace {
         Laptop[] set = order.fillStock();
 //        printArr(set);
         ArrayList<Laptop> stock = arrToList(set);
-        System.out.println("Вероятно, это то, что Вы искали");
-        printList(menu(stock));
+
+
+        int choice = -1;
+         do{
+            System.out.println("\nг==============  МЕНЮ  =============|");
+            System.out.println("|\t1. Найти ноутбук по критериям   |");
+            System.out.println("|\t0. Выйти                        |");
+            choice = put("| Выберите пункт из меню:           |");
+            switch (choice){
+                case 1:
+                    ArrayList<Laptop> res = menu(stock);
+                    System.out.println("Вероятно, это то, что Вы искали:\n");
+                    printList(res);
+                case 0:
+                    break;
+            }
+        }while (choice != 0);
     }
 
     public static ArrayList<Laptop> arrToList (Laptop[] set){
@@ -24,27 +39,41 @@ public class Marketplace {
     public static ArrayList<Laptop> menu(ArrayList<Laptop> stock){
         StringBuilder head = new StringBuilder();
         head.append("Для поиска лучшей модели воспользуйтесь фильтрами:");
-        head.append("\n1.\tпо модели \n2.\tпо оперативной памяти \n3.\tпо объему жесткого диска \n4.\tпо предустановленной ОС \n5.\tпо цвету \n\nТак же Вы можете попробовать подобрать идеальный вариант \nна нашем большом складе \n\n6.\tподобрать идеальный вариант");
-        head.append("\n0.\tВыход");
+        head.append("" +
+                "\n|        v     v     v     v        |" +
+                "\n| 1.\tпо модели                   |" +
+                "\n| 2.\tпо оперативной памяти       |" +
+                "\n| 3.\tпо объему жесткого диска    |" +
+                "\n| 4.\tпо предустановленной ОС     |" +
+                "\n| 5.\tпо цвету                    |" +
+                "\n|___________________________________|" +
+                "\nТак же Вы можете попробовать подобрать идеальный вариант " +
+                "\nна нашем большом складе " +
+                "\n_____________________________________" +
+                "\n| 6.\tподобрать идеальный вариант |" +
+                "\n|___________________________________|");
+        head.append("\n0.\tПоказать всё, что есть");
         System.out.println(head);
         int choise = put("Выберите фильтр:");
-        switch (choise) {
-            case 1:
-                return filterByModel(stock);
-            case 2:
-                return filterByRam(stock);
-            case 3:
-                return filterByMem(stock);
-            case 4:
-                return filterByOs(stock);
-            case 5:
-                return filterByColor(stock);
-            case 6:
-                return makeIdeal(256);
-            case 0:
-                break;
-            default:
-                System.out.println("Неопознанная команда");
+        while (choise!=0) {
+            switch (choise) {
+                case 1:
+                    return filterByModel(stock);
+                case 2:
+                    return filterByRam(stock);
+                case 3:
+                    return filterByMem(stock);
+                case 4:
+                    return filterByOs(stock);
+                case 5:
+                    return filterByColor(stock);
+                case 6:
+                    return makeIdeal(256);
+                case 0:
+                    break;
+                default:
+                    System.out.println("Неопознанная команда");
+            }
         }
         return stock;
     }
@@ -202,37 +231,29 @@ public class Marketplace {
         System.out.println("Сейчас подберём идеальный вариант для Вас");
         System.out.println("Для начала определимся с объемом ПЗУ");
         ArrayList<Laptop> step1 = filterByMem(set);
-        if (step1.size()<1) {
-            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
-            makeIdeal(order*2);
-        }
+        ifNot(step1,order);
         System.out.println("Теперь задайте объем ОЗУ");
         ArrayList<Laptop> step2 = filterByRam(step1);
-        if (step2.size()<1) {
-            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
-            makeIdeal(order*2);
-        }
+        ifNot(step2,order);
         System.out.println("Какому производителю Вы больше доверяете?");
         ArrayList<Laptop> step3 = filterByModel(step2);
-        if (step3.size()<1) {
-            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
-            makeIdeal(order*2);
-        }
+        ifNot(step3,order);
         System.out.println("Какую операционную систему Вам поставить?");
         ArrayList<Laptop> step4 = filterByOs(step3);
-        if (step4.size()<1) {
-            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
-            makeIdeal(order*2);
-        }
+        ifNot(step4,order);
         System.out.println("В какой цвет покрасим корпус?");
         ArrayList<Laptop> res = filterByColor(step4);
-        if (step1.size()<1) {
-            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
-            makeIdeal(order*2);
-        }
+        ifNot(res,order);
 
         System.out.println("Мы нашли то, что Вы искали!");
         return (res);
+    }
+
+    public static void ifNot(ArrayList<Laptop> list, int order){
+        if (list.size()<1) {
+            System.out.println("Приносим свои извинения, но нам придется довезти ещё устройств с завода, а Вам - повторить выбор");
+            makeIdeal(order*2);
+        }
     }
 
     static Scanner input = new Scanner(System.in);

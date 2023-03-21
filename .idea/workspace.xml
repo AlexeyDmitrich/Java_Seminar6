@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68a9e94c-aba8-4e61-80ea-d4a27f828fe1" name="Changes" comment="Реализована сортировка по модели, ОС и цвету (строковые)">
+    <list default="true" id="68a9e94c-aba8-4e61-80ea-d4a27f828fe1" name="Changes" comment="Реализована сортировка">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Homework/Marketplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework/Marketplace.java" afterDir="false" />
     </list>
@@ -120,13 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679383174581</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Реализована сортировка">
+      <created>1679390159867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679390159867</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="seminar6 completed" />
     <MESSAGE value="Starded hw" />
     <MESSAGE value="Реализована сортировка по модели, ОС и цвету (строковые)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализована сортировка по модели, ОС и цвету (строковые)" />
+    <MESSAGE value="Реализована сортировка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализована сортировка" />
   </component>
 </project>
