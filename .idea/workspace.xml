@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68a9e94c-aba8-4e61-80ea-d4a27f828fe1" name="Changes" comment="Оформлено меню доступа">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework/Marketplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework/Marketplace.java" afterDir="false" />
+    <list default="true" id="68a9e94c-aba8-4e61-80ea-d4a27f828fe1" name="Changes" comment="В отображение ноутбука добавлен вывод цвета, метод генерации имени модели сделан приватным.">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679395223694</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="В отображение ноутбука добавлен вывод цвета, метод генерации имени модели сделан приватным.">
+      <created>1679398608516</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679398608516</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +149,8 @@
     <MESSAGE value="Реализована сортировка по модели, ОС и цвету (строковые)" />
     <MESSAGE value="Реализована сортировка" />
     <MESSAGE value="Оформлено меню доступа" />
-    <option name="LAST_COMMIT_MESSAGE" value="Оформлено меню доступа" />
+    <MESSAGE value="Убрано поле из класса Factory." />
+    <MESSAGE value="В отображение ноутбука добавлен вывод цвета, метод генерации имени модели сделан приватным." />
+    <option name="LAST_COMMIT_MESSAGE" value="В отображение ноутбука добавлен вывод цвета, метод генерации имени модели сделан приватным." />
   </component>
 </project>
